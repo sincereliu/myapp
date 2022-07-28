@@ -4,15 +4,20 @@ const app = express()
 const port = 3000
 
 // 托管静态文件
-app.use('/static',express.static('assets_public'))
+app.use('/static', express.static('assets_public'))
 
 
 
 app.get('/', (req, res) => {
-    let options = {
+  let options = {
     root: path.join(__dirname, '/'),
+    dotfiles: 'deny',
+    headers: {
+      'x-timestamp': Date.now(),
+      'x-sent': true
+    }
   }
-  res.sendFile('lxs.html', options)
+  res.sendFile('firstpage.html', options)
 })
 app.post('/', function (req, res) {
   res.send('Got a POST request')
