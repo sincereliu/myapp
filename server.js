@@ -1,9 +1,18 @@
 const express = require('express')
+const path = require('path')
 const app = express()
 const port = 3000
-app.use('public')
+
+// 托管静态文件
+app.use('/static',express.static('assets_public'))
+
+
+
 app.get('/', (req, res) => {
-  res.send('Hello World!')
+    let options = {
+    root: path.join(__dirname, '/'),
+  }
+  res.sendFile('lxs.html', options)
 })
 app.post('/', function (req, res) {
   res.send('Got a POST request')
