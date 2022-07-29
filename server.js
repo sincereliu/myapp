@@ -34,17 +34,16 @@ app.delete('/user', function (req, res) {
   res.send('Got a DELETE request at /user')
 })
 
-// const options = {
-//   key: readFileSync('/root/myapp_cert/myapp.key'),
-//   cert: readFileSync('/root/myapp_cert/myapp.crt'),
-//   allowHTTP1: true
-// }
+const options = {
+  key: readFileSync('/root/myapp_cert/myapp.key'),
+  cert: readFileSync('/root/myapp_cert/myapp.crt')
+}
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
 
-// const httpsserver = https.createSecureServer(options, app)
-// httpsserver.listen(3001, () => {
-//   console.log(`Example app listening on port ${port}`)
-// })
+const httpsserver = https.createServer(options, app)
+httpsserver.listen(3001, () => {
+  console.log(`Example app listening on port ${port}`)
+})
