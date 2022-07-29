@@ -1,9 +1,13 @@
 const express = require('express')
 const path = require('path')
+const http2Express = require('http2-express-bridge')
 const http2 = require('http2')
 const { readFileSync } = require('fs')
 
-const app = express()
+
+
+// only change required
+const app = http2Express(express)
 
 const port = 3000
 
