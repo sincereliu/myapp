@@ -40,7 +40,8 @@ app.delete('/user', function (req, res) {
 
 const options = {
   key: readFileSync('/root/myapp_cert/myapp.key'),
-  cert: readFileSync('/root/myapp_cert/myapp.crt')
+  cert: readFileSync('/root/myapp_cert/myapp.crt'),
+  allowHTTP1: true
 }
 
 app.listen(port, () => {
