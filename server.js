@@ -43,7 +43,7 @@ app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
 
-const httpsserver = https.createsSecureServer(options, app)
+const httpsserver = https.createSecureServer(options, app)
 httpsserver.listen(3001, () => {
   console.log(`Example app listening on port ${port}`)
 })
