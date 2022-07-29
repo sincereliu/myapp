@@ -1,6 +1,6 @@
 const express = require('express')
 const path = require('path')
-const https = require('https')
+const http2 = require('http2')
 const { readFileSync } = require('fs')
 
 const app = express()
@@ -43,7 +43,7 @@ app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
 
-const httpsserver = https.createSecureServer(options, app)
+const httpsserver = http2.createSecureServer(options, app)
 httpsserver.listen(3001, () => {
   console.log(`Example app listening on port ${port}`)
 })
