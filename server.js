@@ -44,11 +44,7 @@ const options = {
   allowHTTP1: true
 }
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
-
 const httpsserver = http2.createSecureServer(options, app)
-httpsserver.listen(3001, () => {
+httpsserver.listen(3000, () => {
   console.log(`Example app listening on port ${port}`)
 })
