@@ -1,6 +1,6 @@
 Get https://second.sincereliu.com http/2
 ###
-get http://www.sincereliu.com http/1.1
+get https://www.sincereliu.com http/2
 ###
 get http://127.0.0.1:3000 http/1.1
 ###
@@ -9,3 +9,5 @@ POST http://127.0.0.1:3000 HTTP/1.1
 DELETE http://127.0.0.1:3000/user HTTP/1.1
 ###
 PUT http://127.0.0.1:3000/user HTTP/1.1
+###
+GET https://www.easonliu.ml http/2
